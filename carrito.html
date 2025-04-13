@@ -1,0 +1,69 @@
+<section class="carrito-section">
+    <div id="step-items" class="carrito-step">
+        <h2 class="section-title">Tu Carrito</h2>
+        <ul id="cart-items" class="cart-items"></ul>
+        <p id="cart-total" class="cart-total hidden">Total: S/ 0.00</p>
+        <div id="cart-empty" class="empty-cart-message hidden">
+            <h3>Carrito Vacío</h3>
+            <p>No tienes arreglos florales añadidos aún.</p>
+            <button id="go-to-catalogo" class="btn" data-section="catalogo">Ver Arreglos</button>
+        </div>
+        <div class="carrito-actions">
+            <button id="clear-cart-btn" class="btn btn-secondary hidden">Vaciar Carrito</button>
+            <button id="checkout-btn" class="btn hidden">Continuar</button>
+        </div>
+    </div>
+
+    <div id="step-details" class="carrito-step hidden">
+        <h2 class="section-title">Detalles del Pedido</h2>
+        <form id="order-form" class="order-form">
+            <div class="form-group">
+                <label for="order-name">Nombre</label>
+                <input type="text" id="order-name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="order-date">Fecha de Entrega</label>
+                <input type="date" id="order-date" required>
+            </div>
+            <div class="form-group">
+                <label for="order-delivery">Tipo de Entrega</label>
+                <select id="order-delivery" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="recojo">Recojo en tienda</option>
+                    <option value="delivery">Delivery</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="order-message">Dedicatoria (opcional)</label>
+                <textarea id="order-message" placeholder="Escribe un mensaje especial" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="order-payment">Método de Pago</label>
+                <select id="order-payment" required>
+                    <option value="">Selecciona un método</option>
+                    <option value="yape">Yape</option>
+                    <option value="plin">Plin</option>
+                </select>
+            </div>
+            <div id="payment-qr" class="payment-qr hidden">
+                <p id="qr-instruction"></p>
+                <img id="qr-image" src="" alt="Código QR" class="qr-image">
+            </div>
+            <div class="form-actions">
+                <button type="button" id="details-back" class="btn btn-secondary">Volver</button>
+                <button type="submit" class="btn">Confirmar Pedido</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="confirmation-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modal-title" class="modal-title">Confirmar Pedido</h3>
+            <div id="modal-message"></div>
+            <div class="modal-buttons">
+                <button id="modal-cancel" class="btn btn-secondary">Cancelar</button>
+                <button id="modal-confirm" class="btn">Enviar Pedido</button>
+            </div>
+        </div>
+    </div>
+</section>

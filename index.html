@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arreglos florales para aniversarios, cumpleaños y ocasiones especiales. Personaliza tu regalo con Florería Encanto.">
+    <meta name="keywords" content="arreglos florales, ramos de flores, regalos románticos, florería, detalles para parejas">
+    <meta name="author" content="Florería Encanto">
+    <title>Florería Encanto - Arreglos para Momentos Especiales</title>
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Leaflet para el mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#fffaf5] text-[#333333] flex flex-col min-h-screen">
+    <!-- Barra superior con el logo -->
+    <header class="bg-[#fffaf5] text-[#333333] fixed top-0 w-full z-10 p-4 shadow-lg">
+        <div class="flex justify-center items-center">
+            <img src="assets/img/logo.png" alt="Florería Encanto" class="w-48 h-9 object-contain">
+        </div>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main id="content" class="flex-1 mt-16 mb-16 overflow-y-auto">
+        <!-- Las secciones (inicio.html, catalogo.html, etc.) se cargan aquí -->
+    </main>
+
+    <!-- Barra inferior de navegación -->
+    <nav class="bg-[#ff69b4] text-white fixed bottom-0 w-full z-10 flex justify-around py-2 shadow-lg">
+        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="inicio">
+            <i class="fas fa-home text-lg"></i>
+            <span class="text-sm">Inicio</span>
+        </button>
+        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="catalogo">
+            <i class="fas fa-seedling text-lg"></i>
+            <span class="text-sm">Catálogo</span>
+        </button>
+        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors relative" data-section="carrito">
+            <i class="fas fa-shopping-cart text-lg" id="cart-icon"></i>
+            <span class="text-sm">Carrito</span>
+            <span id="cart-count" class="bg-[#ffb6c1] text-[#333333] rounded-full w-5 h-5 flex items-center justify-center text-xs absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 hidden">0</span>
+        </button>
+        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="localizacion">
+            <i class="fas fa-map-marker-alt text-lg"></i>
+            <span class="text-sm">Localización</span>
+        </button>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
