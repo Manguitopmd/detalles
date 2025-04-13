@@ -1,45 +1,62 @@
 <section class="carrito-section">
+    <!-- Mensaje de urgencia -->
+    <div class="urgency-message">¡Confirma pronto, las flores se agotan!</div>
+
+    <!-- Paso 1: Ítems -->
     <div id="step-items" class="carrito-step">
-        <h2 class="section-title">Tu Carrito</h2>
+        <h2 class="section-title"><i class="fas fa-flower-tulip"></i> Tu Carrito</h2>
         <ul id="cart-items" class="cart-items"></ul>
         <p id="cart-total" class="cart-total hidden">Total: S/ 0.00</p>
         <div id="cart-empty" class="empty-cart-message hidden">
-            <h3>Carrito Vacío</h3>
-            <p>No tienes arreglos florales añadidos aún.</p>
+            <h3>¡No dejes pasar la oportunidad!</h3>
+            <p>Explora nuestros arreglos florales ahora.</p>
             <button id="go-to-catalogo" class="btn" data-section="catalogo">Ver Arreglos</button>
         </div>
         <div class="carrito-actions">
-            <button id="clear-cart-btn" class="btn btn-secondary hidden">Vaciar Carrito</button>
-            <button id="checkout-btn" class="btn hidden">Continuar</button>
+            <button id="clear-cart-btn" class="btn btn-secondary hidden" aria-label="Vaciar el carrito">Vaciar Carrito</button>
+            <button id="checkout-btn" class="btn hidden" aria-label="Continuar al formulario de pedido">Continuar</button>
         </div>
     </div>
 
+    <!-- Paso 2: Detalles -->
     <div id="step-details" class="carrito-step hidden">
-        <h2 class="section-title">Detalles del Pedido</h2>
+        <h2 class="section-title"><i class="fas fa-flower-tulip"></i> Detalles del Pedido</h2>
+        <div id="prep-message-container"></div> <!-- Contenedor para mensaje de preparación -->
         <form id="order-form" class="order-form">
             <div class="form-group">
-                <label for="order-name">Nombre</label>
-                <input type="text" id="order-name" placeholder="Tu nombre" required>
+                <label for="order-name">Nombre <span class="text-red-500">*</span></label>
+                <input type="text" id="order-name" placeholder="Tu nombre completo" required aria-required="true" aria-label="Ingresa tu nombre">
             </div>
             <div class="form-group">
-                <label for="order-date">Fecha de Entrega</label>
-                <input type="date" id="order-date" required>
+                <label for="order-date">Fecha de Entrega <span class="text-red-500">*</span></label>
+                <input type="date" id="order-date" required aria-required="true" aria-label="Selecciona la fecha de entrega" min="2025-04-15">
             </div>
             <div class="form-group">
-                <label for="order-delivery">Tipo de Entrega</label>
-                <select id="order-delivery" required>
+                <label for="order-time">Horario de Entrega <span class="text-red-500">*</span></label>
+                <select id="order-time" required aria-required="true" aria-label="Selecciona el horario de entrega">
+                    <option value="">Selecciona un horario</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="order-delivery">Tipo de Entrega <span class="text-red-500">*</span></label>
+                <select id="order-delivery" required aria-required="true" aria-label="Selecciona el tipo de entrega">
                     <option value="">Selecciona una opción</option>
                     <option value="recojo">Recojo en tienda</option>
                     <option value="delivery">Delivery</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="order-message">Dedicatoria (opcional)</label>
-                <textarea id="order-message" placeholder="Escribe un mensaje especial" rows="4"></textarea>
+            <div id="address-group" class="form-group hidden">
+                <label for="order-address">Dirección de Entrega <span class="text-red-500">*</span></label>
+                <input type="text" id="order-address" placeholder="Ej: Av. Floral 456, Miraflores" aria-label="Ingresa la dirección de entrega">
             </div>
             <div class="form-group">
-                <label for="order-payment">Método de Pago</label>
-                <select id="order-payment" required>
+                <label for="order-message">Dedicatoria (opcional)</label>
+                <textarea id="order-message" placeholder="Escribe un mensaje especial (máx. 200 caracteres)" rows="4" maxlength="200" aria-label="Escribe una dedicatoria opcional"></textarea>
+                <p class="text-sm text-[#555555]" id="char-count">0/200</p>
+            </div>
+            <div class="form-group">
+                <label for="order-payment">Método de Pago <span class="text-red-500">*</span></label>
+                <select id="order-payment" required aria-required="true" aria-label="Selecciona el método de pago">
                     <option value="">Selecciona un método</option>
                     <option value="yape">Yape</option>
                     <option value="plin">Plin</option>
@@ -47,22 +64,23 @@
             </div>
             <div id="payment-qr" class="payment-qr hidden">
                 <p id="qr-instruction"></p>
-                <img id="qr-image" src="" alt="Código QR" class="qr-image">
+                <img id="qr-image" data-src="" alt="Código QR para pago" class="qr-image">
             </div>
             <div class="form-actions">
-                <button type="button" id="details-back" class="btn btn-secondary">Volver</button>
-                <button type="submit" class="btn">Confirmar Pedido</button>
+                <button type="button" id="details-back" class="btn btn-secondary" aria-label="Volver a la lista de ítems">Volver</button>
+                <button type="submit" class="btn" aria-label="Confirmar el pedido">Confirmar Pedido</button>
             </div>
         </form>
     </div>
 
+    <!-- Modal de confirmación -->
     <div id="confirmation-modal" class="modal hidden">
         <div class="modal-content">
             <h3 id="modal-title" class="modal-title">Confirmar Pedido</h3>
             <div id="modal-message"></div>
             <div class="modal-buttons">
-                <button id="modal-cancel" class="btn btn-secondary">Cancelar</button>
-                <button id="modal-confirm" class="btn">Enviar Pedido</button>
+                <button id="modal-cancel" class="btn btn-secondary" aria-label="Cancelar el pedido">Cancelar</button>
+                <button id="modal-confirm" class="btn" aria-label="Enviar el pedido por WhatsApp">Enviar Pedido</button>
             </div>
         </div>
     </div>

@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arreglos florales para aniversarios, cumpleaños y ocasiones especiales. Personaliza tu regalo con Florería Encanto.">
-    <meta name="keywords" content="arreglos florales, ramos de flores, regalos románticos, florería, detalles para parejas">
+    <meta name="description" content="Florería Encanto: Arreglos florales personalizados en Lima para aniversarios, cumpleaños y momentos especiales. Envíos rápidos y recojo en tienda.">
+    <meta name="keywords" content="arreglos florales, flores Lima, florería, regalos personalizados, delivery flores, ramos de rosas">
     <meta name="author" content="Florería Encanto">
-    <title>Florería Encanto - Arreglos para Momentos Especiales</title>
+    <title>Florería Encanto - Arreglos Florales en Lima</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <!-- Google Fonts: Playfair Display y Lato -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Lato:wght@400;500&display=swap">
     <!-- Font Awesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Leaflet para el mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,33 +32,35 @@
     <!-- Barra superior con el logo -->
     <header class="bg-[#fffaf5] text-[#333333] fixed top-0 w-full z-10 p-4 shadow-lg">
         <div class="flex justify-center items-center">
-            <img src="assets/img/logo.png" alt="Florería Encanto" class="w-48 h-9 object-contain">
+            <img src="assets/img/logo.png" alt="Logo de Florería Encanto, flores y corazón" class="w-48 h-9 object-contain">
         </div>
     </header>
 
     <!-- Contenido dinámico -->
     <main id="content" class="flex-1 mt-16 mb-16 overflow-y-auto">
-        <!-- Las secciones (inicio.html, catalogo.html, etc.) se cargan aquí -->
+        <div class="loading-message text-center p-4 text-[#555555]">
+            <p>Cargando contenido, por favor espera...</p>
+        </div>
     </main>
 
     <!-- Barra inferior de navegación -->
     <nav class="bg-[#ff69b4] text-white fixed bottom-0 w-full z-10 flex justify-around py-2 shadow-lg">
-        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="inicio">
+        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="inicio" aria-label="Ir a la página de inicio">
             <i class="fas fa-home text-lg"></i>
             <span class="text-sm">Inicio</span>
         </button>
-        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="catalogo">
+        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="catalogo" aria-label="Ver el catálogo de arreglos florales">
             <i class="fas fa-seedling text-lg"></i>
             <span class="text-sm">Catálogo</span>
         </button>
-        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors relative" data-section="carrito">
+        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors relative" data-section="carrito" aria-label="Ver el carrito de compras">
             <i class="fas fa-shopping-cart text-lg" id="cart-icon"></i>
             <span class="text-sm">Carrito</span>
             <span id="cart-count" class="bg-[#ffb6c1] text-[#333333] rounded-full w-5 h-5 flex items-center justify-center text-xs absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 hidden">0</span>
         </button>
-        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="localizacion">
+        <button class="nav-btn flex flex-col items-center text-white hover:text-[#fff0f5] transition-colors" data-section="localizacion" aria-label="Ver la ubicación de la florería">
             <i class="fas fa-map-marker-alt text-lg"></i>
-            <span class="text-sm">Localización</span>
+            <span class="text-sm">Ubicación</span>
         </button>
     </nav>
 

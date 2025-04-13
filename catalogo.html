@@ -1,87 +1,95 @@
-<div class="category-tabs-section">
-    <button class="tab-btn active" data-category="todos">Todos</button>
-    <button class="tab-btn" data-category="arreglos">Arreglos</button>
-    <button class="tab-btn" data-category="ramos">Ramos</button>
-    <button class="tab-btn" data-category="especiales">Especiales</button>
-</div>
-
 <section class="carta-section">
+    <!-- Mensaje de urgencia -->
+    <div class="urgency-message">¡Pide pronto, stock limitado!</div>
+
+    <!-- Pestañas de categorías -->
+    <div class="category-tabs-section">
+        <button class="tab-btn active" data-category="todos" aria-label="Mostrar todos los productos">Todos</button>
+        <button class="tab-btn" data-category="arreglos" aria-label="Mostrar arreglos florales">Arreglos</button>
+        <button class="tab-btn" data-category="ramos" aria-label="Mostrar ramos de flores">Ramos</button>
+        <button class="tab-btn" data-category="especiales" aria-label="Mostrar arreglos especiales">Especiales</button>
+    </div>
+
     <!-- Categoría: Todos -->
     <div class="category" data-category="todos">
-        <h3 class="category-title">Todos</h3>
+        <h3 class="category-title"><i class="fas fa-flower-tulip"></i> Todos</h3>
         <div class="items">
             <!-- Arreglo Clásico -->
             <div class="item" data-id="arreglo-clasico">
-                <img src="assets/img/catalogo/arreglo-clasico.jpg" alt="Arreglo Clásico" class="item-image">
+                <img src="assets/img/catalogo/arreglo-clasico.jpg" alt="Arreglo Clásico" class="item-image" data-src="assets/img/catalogo/arreglo-clasico.jpg">
                 <div class="item-info">
                     <h4>Arreglo Clásico</h4>
                     <p class="price">S/ 80.00</p>
+                    <p class="stock">Quedan 10</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Arreglo Clásico" data-description="Un elegante arreglo con rosas rojas y blancas, acompañado de follaje verde en una base de cerámica. Ideal para aniversarios o decoraciones románticas.">
+                    <button class="view-details-btn" data-name="Arreglo Clásico" data-description="Un elegante arreglo con rosas rojas y blancas, acompañado de follaje verde en una base de cerámica. Ideal para aniversarios o decoraciones románticas." aria-label="Ver detalles del Arreglo Clásico">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-clasico.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-clasico.jpg" aria-label="Ver foto del Arreglo Clásico">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Arreglo Clásico" data-price="80.00" data-image="assets/img/catalogo/arreglo-clasico.jpg">
+                    <button class="add-to-cart-btn" data-name="Arreglo Clásico" data-price="80.00" data-image="assets/img/catalogo/arreglo-clasico.jpg" data-stock="10" aria-label="Añadir Arreglo Clásico al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
             <!-- Arreglo Tropical -->
             <div class="item" data-id="arreglo-tropical">
-                <img src="assets/img/catalogo/arreglo-tropical.jpg" alt="Arreglo Tropical" class="item-image">
+                <img src="assets/img/catalogo/arreglo-tropical.jpg" alt="Arreglo Tropical" class="item-image" data-src="assets/img/catalogo/arreglo-tropical.jpg">
                 <div class="item-info">
                     <h4>Arreglo Tropical</h4>
                     <p class="price">S/ 100.00</p>
+                    <p class="stock">Quedan 8</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Arreglo Tropical" data-description="Un vibrante arreglo con orquídeas, lirios y flores exóticas, presentado en una cesta tejida. Perfecto para eventos o sorprender con un toque único.">
+                    <button class="view-details-btn" data-name="Arreglo Tropical" data-description="Un vibrante arreglo con orquídeas, lirios y flores exóticas, presentado en una cesta tejida. Perfecto para eventos o sorprender con un toque único." aria-label="Ver detalles del Arreglo Tropical">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-tropical.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-tropical.jpg" aria-label="Ver foto del Arreglo Tropical">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Arreglo Tropical" data-price="100.00" data-image="assets/img/catalogo/arreglo-tropical.jpg">
+                    <button class="add-to-cart-btn" data-name="Arreglo Tropical" data-price="100.00" data-image="assets/img/catalogo/arreglo-tropical.jpg" data-stock="8" aria-label="Añadir Arreglo Tropical al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
             <!-- Ramo de Rosas -->
             <div class="item" data-id="ramo-rosas">
-                <img src="assets/img/catalogo/ramo-rosas.jpg" alt="Ramo de Rosas" class="item-image">
+                <img src="assets/img/catalogo/ramo-rosas.jpg" alt="Ramo de Rosas" class="item-image" data-src="assets/img/catalogo/ramo-rosas.jpg">
                 <div class="item-info">
                     <h4>Ramo de Rosas</h4>
                     <p class="price">S/ 50.00</p>
+                    <p class="stock">Quedan 15</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Ramo de Rosas" data-description="Un hermoso ramo de 12 rosas rojas envueltas en papel kraft y cinta de satén. Perfecto para expresar amor o felicitaciones.">
+                    <button class="view-details-btn" data-name="Ramo de Rosas" data-description="Un hermoso ramo de 12 rosas rojas envueltas en papel kraft y cinta de satén. Perfecto para expresar amor o felicitaciones." aria-label="Ver detalles del Ramo de Rosas">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/ramo-rosas.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/ramo-rosas.jpg" aria-label="Ver foto del Ramo de Rosas">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Ramo de Rosas" data-price="50.00" data-image="assets/img/catalogo/ramo-rosas.jpg">
+                    <button class="add-to-cart-btn" data-name="Ramo de Rosas" data-price="50.00" data-image="assets/img/catalogo/ramo-rosas.jpg" data-stock="15" aria-label="Añadir Ramo de Rosas al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
             <!-- Ramo Mixto -->
             <div class="item" data-id="ramo-mixto">
-                <img src="assets/img/catalogo/ramo-mixto.jpg" alt="Ramo Mixto" class="item-image">
+                <img src="assets/img/catalogo/ramo-mixto.jpg" alt="Ramo Mixto" class="item-image" data-src="assets/img/catalogo/ramo-mixto.jpg">
                 <div class="item-info">
                     <h4>Ramo Mixto</h4>
                     <p class="price">S/ 60.00</p>
+                    <p class="stock">Quedan 12</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Ramo Mixto" data-description="Combinación de rosas, lirios y margaritas en tonos pastel, envuelto en tela de yute. Ideal para cumpleaños o agradecimientos.">
+                    <button class="view-details-btn" data-name="Ramo Mixto" data-description="Combinación de rosas, lirios y margaritas en tonos pastel, envuelto en tela de yute. Ideal para cumpleaños o agradecimientos." aria-label="Ver detalles del Ramo Mixto">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/ramo-mixto.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/ramo-mixto.jpg" aria-label="Ver foto del Ramo Mixto">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Ramo Mixto" data-price="60.00" data-image="assets/img/catalogo/ramo-mixto.jpg">
+                    <button class="add-to-cart-btn" data-name="Ramo Mixto" data-price="60.00" data-image="assets/img/catalogo/ramo-mixto.jpg" data-stock="12" aria-label="Añadir Ramo Mixto al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
@@ -89,19 +97,20 @@
             <!-- Caja de Rosas -->
             <div class="item promo-item" data-id="caja-rosas">
                 <span class="promo-badge">¡Oferta!</span>
-                <img src="assets/img/catalogo/caja-rosas.jpg" alt="Caja de Rosas" class="item-image">
+                <img src="assets/img/catalogo/caja-rosas.jpg" alt="Caja de Rosas" class="item-image" data-src="assets/img/catalogo/caja-rosas.jpg">
                 <div class="item-info">
                     <h4>Caja de Rosas</h4>
                     <p class="price">S/ 120.00</p>
+                    <p class="stock">Quedan 5</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Caja de Rosas" data-description="Una lujosa caja con 24 rosas premium y detalles de encaje. Perfecta para propuestas o eventos especiales.">
+                    <button class="view-details-btn" data-name="Caja de Rosas" data-description="Una lujosa caja con 24 rosas premium y detalles de encaje. Perfecta para propuestas o eventos especiales." aria-label="Ver detalles de la Caja de Rosas">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/caja-rosas.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/caja-rosas.jpg" aria-label="Ver foto de la Caja de Rosas">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Caja de Rosas" data-price="120.00" data-image="assets/img/catalogo/caja-rosas.jpg">
+                    <button class="add-to-cart-btn" data-name="Caja de Rosas" data-price="120.00" data-image="assets/img/catalogo/caja-rosas.jpg" data-stock="5" aria-label="Añadir Caja de Rosas al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
@@ -109,19 +118,20 @@
             <!-- Arreglo Aniversario -->
             <div class="item promo-item" data-id="arreglo-aniversario">
                 <span class="promo-badge">¡Oferta!</span>
-                <img src="assets/img/catalogo/arreglo-aniversario.jpg" alt="Arreglo Aniversario" class="item-image">
+                <img src="assets/img/catalogo/arreglo-aniversario.jpg" alt="Arreglo Aniversario" class="item-image" data-src="assets/img/catalogo/arreglo-aniversario.jpg">
                 <div class="item-info">
                     <h4>Arreglo Aniversario</h4>
                     <p class="price">S/ 150.00</p>
+                    <p class="stock">Quedan 3</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Arreglo Aniversario" data-description="Un majestuoso arreglo con rosas, tulipanes y orquídeas en una base de cristal. Ideal para celebrar momentos inolvidables.">
+                    <button class="view-details-btn" data-name="Arreglo Aniversario" data-description="Un majestuoso arreglo con rosas, tulipanes y orquídeas en una base de cristal. Ideal para celebrar momentos inolvidables." aria-label="Ver detalles del Arreglo Aniversario">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-aniversario.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-aniversario.jpg" aria-label="Ver foto del Arreglo Aniversario">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Arreglo Aniversario" data-price="150.00" data-image="assets/img/catalogo/arreglo-aniversario.jpg">
+                    <button class="add-to-cart-btn" data-name="Arreglo Aniversario" data-price="150.00" data-image="assets/img/catalogo/arreglo-aniversario.jpg" data-stock="3" aria-label="Añadir Arreglo Aniversario al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
@@ -131,42 +141,44 @@
 
     <!-- Categoría: Arreglos -->
     <div class="category hidden" data-category="arreglos">
-        <h3 class="category-title">Arreglos</h3>
+        <h3 class="category-title"><i class="fas fa-flower-tulip"></i> Arreglos</h3>
         <div class="items">
             <!-- Arreglo Clásico -->
             <div class="item" data-id="arreglo-clasico">
-                <img src="assets/img/catalogo/arreglo-clasico.jpg" alt="Arreglo Clásico" class="item-image">
+                <img src="assets/img/catalogo/arreglo-clasico.jpg" alt="Arreglo Clásico" class="item-image" data-src="assets/img/catalogo/arreglo-clasico.jpg">
                 <div class="item-info">
                     <h4>Arreglo Clásico</h4>
                     <p class="price">S/ 80.00</p>
+                    <p class="stock">Quedan 10</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Arreglo Clásico" data-description="Un elegante arreglo con rosas rojas y blancas, acompañado de follaje verde en una base de cerámica. Ideal para aniversarios o decoraciones románticas.">
+                    <button class="view-details-btn" data-name="Arreglo Clásico" data-description="Un elegante arreglo con rosas rojas y blancas, acompañado de follaje verde en una base de cerámica. Ideal para aniversarios o decoraciones románticas." aria-label="Ver detalles del Arreglo Clásico">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-clasico.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-clasico.jpg" aria-label="Ver foto del Arreglo Clásico">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Arreglo Clásico" data-price="80.00" data-image="assets/img/catalogo/arreglo-clasico.jpg">
+                    <button class="add-to-cart-btn" data-name="Arreglo Clásico" data-price="80.00" data-image="assets/img/catalogo/arreglo-clasico.jpg" data-stock="10" aria-label="Añadir Arreglo Clásico al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
             <!-- Arreglo Tropical -->
             <div class="item" data-id="arreglo-tropical">
-                <img src="assets/img/catalogo/arreglo-tropical.jpg" alt="Arreglo Tropical" class="item-image">
+                <img src="assets/img/catalogo/arreglo-tropical.jpg" alt="Arreglo Tropical" class="item-image" data-src="assets/img/catalogo/arreglo-tropical.jpg">
                 <div class="item-info">
                     <h4>Arreglo Tropical</h4>
                     <p class="price">S/ 100.00</p>
+                    <p class="stock">Quedan 8</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Arreglo Tropical" data-description="Un vibrante arreglo con orquídeas, lirios y flores exóticas, presentado en una cesta tejida. Perfecto para eventos o sorprender con un toque único.">
+                    <button class="view-details-btn" data-name="Arreglo Tropical" data-description="Un vibrante arreglo con orquídeas, lirios y flores exóticas, presentado en una cesta tejida. Perfecto para eventos o sorprender con un toque único." aria-label="Ver detalles del Arreglo Tropical">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-tropical.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-tropical.jpg" aria-label="Ver foto del Arreglo Tropical">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Arreglo Tropical" data-price="100.00" data-image="assets/img/catalogo/arreglo-tropical.jpg">
+                    <button class="add-to-cart-btn" data-name="Arreglo Tropical" data-price="100.00" data-image="assets/img/catalogo/arreglo-tropical.jpg" data-stock="8" aria-label="Añadir Arreglo Tropical al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
@@ -176,42 +188,44 @@
 
     <!-- Categoría: Ramos -->
     <div class="category hidden" data-category="ramos">
-        <h3 class="category-title">Ramos</h3>
+        <h3 class="category-title"><i class="fas fa-flower-tulip"></i> Ramos</h3>
         <div class="items">
             <!-- Ramo de Rosas -->
             <div class="item" data-id="ramo-rosas">
-                <img src="assets/img/catalogo/ramo-rosas.jpg" alt="Ramo de Rosas" class="item-image">
+                <img src="assets/img/catalogo/ramo-rosas.jpg" alt="Ramo de Rosas" class="item-image" data-src="assets/img/catalogo/ramo-rosas.jpg">
                 <div class="item-info">
                     <h4>Ramo de Rosas</h4>
                     <p class="price">S/ 50.00</p>
+                    <p class="stock">Quedan 15</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Ramo de Rosas" data-description="Un hermoso ramo de 12 rosas rojas envueltas en papel kraft y cinta de satén. Perfecto para expresar amor o felicitaciones.">
+                    <button class="view-details-btn" data-name="Ramo de Rosas" data-description="Un hermoso ramo de 12 rosas rojas envueltas en papel kraft y cinta de satén. Perfecto para expresar amor o felicitaciones." aria-label="Ver detalles del Ramo de Rosas">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/ramo-rosas.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/ramo-rosas.jpg" aria-label="Ver foto del Ramo de Rosas">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Ramo de Rosas" data-price="50.00" data-image="assets/img/catalogo/ramo-rosas.jpg">
+                    <button class="add-to-cart-btn" data-name="Ramo de Rosas" data-price="50.00" data-image="assets/img/catalogo/ramo-rosas.jpg" data-stock="15" aria-label="Añadir Ramo de Rosas al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
             <!-- Ramo Mixto -->
             <div class="item" data-id="ramo-mixto">
-                <img src="assets/img/catalogo/ramo-mixto.jpg" alt="Ramo Mixto" class="item-image">
+                <img src="assets/img/catalogo/ramo-mixto.jpg" alt="Ramo Mixto" class="item-image" data-src="assets/img/catalogo/ramo-mixto.jpg">
                 <div class="item-info">
                     <h4>Ramo Mixto</h4>
                     <p class="price">S/ 60.00</p>
+                    <p class="stock">Quedan 12</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Ramo Mixto" data-description="Combinación de rosas, lirios y margaritas en tonos pastel, envuelto en tela de yute. Ideal para cumpleaños o agradecimientos.">
+                    <button class="view-details-btn" data-name="Ramo Mixto" data-description="Combinación de rosas, lirios y margaritas en tonos pastel, envuelto en tela de yute. Ideal para cumpleaños o agradecimientos." aria-label="Ver detalles del Ramo Mixto">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/ramo-mixto.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/ramo-mixto.jpg" aria-label="Ver foto del Ramo Mixto">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Ramo Mixto" data-price="60.00" data-image="assets/img/catalogo/ramo-mixto.jpg">
+                    <button class="add-to-cart-btn" data-name="Ramo Mixto" data-price="60.00" data-image="assets/img/catalogo/ramo-mixto.jpg" data-stock="12" aria-label="Añadir Ramo Mixto al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
@@ -221,24 +235,25 @@
 
     <!-- Categoría: Especiales -->
     <div class="category hidden" data-category="especiales">
-        <h3 class="category-title">Especiales</h3>
+        <h3 class="category-title"><i class="fas fa-flower-tulip"></i> Especiales</h3>
         <div class="items">
             <!-- Caja de Rosas -->
             <div class="item promo-item" data-id="caja-rosas">
                 <span class="promo-badge">¡Oferta!</span>
-                <img src="assets/img/catalogo/caja-rosas.jpg" alt="Caja de Rosas" class="item-image">
+                <img src="assets/img/catalogo/caja-rosas.jpg" alt="Caja de Rosas" class="item-image" data-src="assets/img/catalogo/caja-rosas.jpg">
                 <div class="item-info">
                     <h4>Caja de Rosas</h4>
                     <p class="price">S/ 120.00</p>
+                    <p class="stock">Quedan 5</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Caja de Rosas" data-description="Una lujosa caja con 24 rosas premium y detalles de encaje. Perfecta para propuestas o eventos especiales.">
+                    <button class="view-details-btn" data-name="Caja de Rosas" data-description="Una lujosa caja con 24 rosas premium y detalles de encaje. Perfecta para propuestas o eventos especiales." aria-label="Ver detalles de la Caja de Rosas">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/caja-rosas.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/caja-rosas.jpg" aria-label="Ver foto de la Caja de Rosas">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Caja de Rosas" data-price="120.00" data-image="assets/img/catalogo/caja-rosas.jpg">
+                    <button class="add-to-cart-btn" data-name="Caja de Rosas" data-price="120.00" data-image="assets/img/catalogo/caja-rosas.jpg" data-stock="5" aria-label="Añadir Caja de Rosas al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
@@ -246,19 +261,20 @@
             <!-- Arreglo Aniversario -->
             <div class="item promo-item" data-id="arreglo-aniversario">
                 <span class="promo-badge">¡Oferta!</span>
-                <img src="assets/img/catalogo/arreglo-aniversario.jpg" alt="Arreglo Aniversario" class="item-image">
+                <img src="assets/img/catalogo/arreglo-aniversario.jpg" alt="Arreglo Aniversario" class="item-image" data-src="assets/img/catalogo/arreglo-aniversario.jpg">
                 <div class="item-info">
                     <h4>Arreglo Aniversario</h4>
                     <p class="price">S/ 150.00</p>
+                    <p class="stock">Quedan 3</p>
                 </div>
                 <div class="item-actions">
-                    <button class="view-details-btn" data-name="Arreglo Aniversario" data-description="Un majestuoso arreglo con rosas, tulipanes y orquídeas en una base de cristal. Ideal para celebrar momentos inolvidables.">
+                    <button class="view-details-btn" data-name="Arreglo Aniversario" data-description="Un majestuoso arreglo con rosas, tulipanes y orquídeas en una base de cristal. Ideal para celebrar momentos inolvidables." aria-label="Ver detalles del Arreglo Aniversario">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-aniversario.jpg">
+                    <button class="view-photo-btn" data-image="assets/img/catalogo/arreglo-aniversario.jpg" aria-label="Ver foto del Arreglo Aniversario">
                         <i class="fas fa-image"></i>
                     </button>
-                    <button class="add-to-cart-btn" data-name="Arreglo Aniversario" data-price="150.00" data-image="assets/img/catalogo/arreglo-aniversario.jpg">
+                    <button class="add-to-cart-btn" data-name="Arreglo Aniversario" data-price="150.00" data-image="assets/img/catalogo/arreglo-aniversario.jpg" data-stock="3" aria-label="Añadir Arreglo Aniversario al carrito">
                         <i class="fas fa-cart-plus"></i>
                     </button>
                 </div>
@@ -270,7 +286,7 @@
 <!-- Modal para detalles -->
 <div id="service-modal" class="modal hidden">
     <div class="modal-content">
-        <button id="modal-close" class="modal-close-btn"><i class="fas fa-times"></i></button>
+        <button id="modal-close" class="modal-close-btn" aria-label="Cerrar modal de detalles"><i class="fas fa-times"></i></button>
         <h3 id="modal-title" class="modal-title"></h3>
         <p id="modal-description" class="modal-description"></p>
     </div>

@@ -1,9 +1,12 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Lato:wght@400;500&display=swap');
+
 /* Paleta de colores minimalista */
 :root {
     --fondo-principal: #f8f8f8; /* Gris claro, fondo general */
     --fondo-seccion: #ffffff; /* Blanco puro, secciones */
     --texto-primario: #2b2b2b; /* Negro suave, textos principales */
-    --texto-secundario: #666666; /* Gris medio, detalles */
+    --texto-secundario: #555555; /* Gris oscuro, detalles (mejor contraste) */
     --accent: #ff69b4; /* Rosa vibrante, botón carrito */
     --accent-suave: #ffb6c1; /* Rosa claro, hover carrito */
     --gris-suave: #e5e5e5; /* Bordes, fondos secundarios */
@@ -24,7 +27,7 @@
 body {
     background-color: var(--fondo-principal);
     color: var(--texto-primario);
-    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     min-height: 100vh;
@@ -40,6 +43,15 @@ main#content {
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
+    min-height: 400px; /* Evita colapso si está vacío */
+}
+
+/* Mensaje de carga */
+.loading-message {
+    text-align: center;
+    padding: 2rem;
+    color: var(--texto-secundario);
+    font-size: 1.1rem;
 }
 
 /* Navegación superior */
@@ -87,11 +99,13 @@ main#content {
     align-items: center;
     gap: 0.3rem;
     transition: all 0.3s ease;
+    cursor: pointer; /* Asegurado, aunque no era el problema */
 }
 
 .bottom-nav button.nav-btn:hover,
 .bottom-nav button.nav-btn.active {
     color: var(--accent-suave);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .bottom-nav i {
@@ -133,6 +147,67 @@ main#content {
     0% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
     100% { transform: translateY(0); }
+}
+
+/* Slider (corregido) */
+section.slider {
+    width: 100%;
+    max-width: 360px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background: var(--fondo-seccion);
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+section.slider .slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+section.slider .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1; /* Evita superposiciones */
+}
+
+section.slider .slides img.active {
+    opacity: 1;
+    z-index: 2; /* Imagen activa encima */
+}
+
+section.slider .slides img[data-src] {
+    opacity: 0; /* Soporte para lazy loading */
+}
+
+/* Secciones genéricas */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--texto-primario);
+    margin-bottom: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.section-title i {
+    color: var(--accent);
+    font-size: 1.4rem;
 }
 
 /* Catálogo */
@@ -180,6 +255,7 @@ main#content {
 }
 
 .category-title {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--texto-primario);
@@ -204,6 +280,7 @@ main#content {
     border-radius: 10px;
     padding: 1rem;
     transition: transform 0.3s ease;
+    position: relative; /* Para badges */
 }
 
 .item:hover {
@@ -219,6 +296,7 @@ main#content {
 }
 
 .item-info h4 {
+    font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--texto-primario);
@@ -298,53 +376,24 @@ main#content {
     animation: blink 1.5s ease-in-out infinite;
 }
 
+.promo-item .stock-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--verde-vivo);
+    color: #ffffff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
 @keyframes blink {
     0%, 100% { background: var(--accent); }
     50% { background: var(--accent-suave); }
 }
 
-/* Slider (inicio.html) */
-section.slider {
-    width: 100%;
-    max-width: 360px;
-    height: 100px;
-    padding: 0;
-    overflow: hidden;
-    background: var(--fondo-seccion);
-    position: relative;
-}
-
-section.slider .slides {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-section.slider .slides img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-section.slider .slides img.active {
-    opacity: 1;
-}
-
 /* Secciones genéricas */
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--texto-primario);
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
 .schedule-section,
 .about-section,
 .contact-title-section,
@@ -356,6 +405,36 @@ section.slider .slides img.active {
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.carrito-section {
+    background: url('assets/img/floral-pattern.png') center/cover no-repeat, var(--fondo-seccion);
+}
+
+/* Mensaje de urgencia */
+.urgency-message {
+    text-align: center;
+    padding: 1rem;
+    background: var(--accent-suave);
+    color: var(--texto-primario);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Mensaje de preparación */
+.prep-message {
+    font-family: var(--font-secondary);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem 0;
+    background-color: rgba(255, 105, 180, 0.1); /* Rosa suave */
+    padding: 0.75rem;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
 }
 
 .about-text {
@@ -549,6 +628,7 @@ section.slider .slides img.active {
 }
 
 .cart-item-info h4 {
+    font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--texto-primario);
@@ -587,6 +667,7 @@ section.slider .slides img.active {
 }
 
 .empty-cart-message h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: var(--texto-primario);
     margin-bottom: 0.5rem;
@@ -640,6 +721,7 @@ section.slider .slides img.active {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
 }
 
 .form-group textarea {
@@ -662,13 +744,6 @@ section.slider .slides img.active {
     width: 150px;
     height: 150px;
     border-radius: 8px;
-}
-
-.form-actions {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: 1rem;
 }
 
 /* Modales */
@@ -705,6 +780,7 @@ section.slider .slides img.active {
 }
 
 .modal-title {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--texto-primario);
@@ -751,6 +827,7 @@ section.slider .slides img.active {
 }
 
 .notification-modal-content h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--texto-primario);
@@ -822,6 +899,7 @@ section.slider .slides img.active {
 }
 
 .error-message h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--accent);
@@ -832,6 +910,16 @@ section.slider .slides img.active {
     color: var(--texto-secundario);
 }
 
+/* Lazy loading */
+img[data-src] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[src] {
+    opacity: 1;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     body {
@@ -840,6 +928,7 @@ section.slider .slides img.active {
 
     main#content {
         padding: 70px 0.5rem 60px;
+        min-height: 300px;
     }
 
     .top-nav {
@@ -856,6 +945,11 @@ section.slider .slides img.active {
 
     .bottom-nav span {
         font-size: 0.7rem;
+    }
+
+    section.slider {
+        max-width: 100%;
+        height: 160px;
     }
 
     .category-tabs-section {
@@ -896,14 +990,8 @@ section.slider .slides img.active {
         font-size: 0.9rem;
     }
 
-    section.slider {
-        width: 100%;
-        max-width: 320px;
-        height: 80px;
-    }
-
     .section-title {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
     }
 
     .schedule-section,
@@ -934,7 +1022,7 @@ section.slider .slides img.active {
         padding: 0.75rem;
     }
 
-    #map {
+    .map-section #map {
         max-width: 100%;
         height: 250px;
     }
@@ -974,5 +1062,10 @@ section.slider .slides img.active {
 
     #modal-message {
         font-size: 0.9rem;
+    }
+
+    .prep-message {
+        font-size: 0.9rem;
+        padding: 0.5rem;
     }
 }
